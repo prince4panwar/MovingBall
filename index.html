@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Bouncing Ball with JavaScript</title>
+   <style>
+
+        body,html{
+            width: 50vw;
+            height: 50vh;
+            overflow: hidden;
+        }
+        /* .container{
+            height: 70vh;
+            width: 70vw;
+        } */
+      .ball{
+         width: 200px;
+         height: 200px;
+         border-radius: 50%;
+         position: absolute;
+      }
+   </style>
+</head>
+   <body>
+      <div class="container">
+        <div class="ball" id="ball1" style="background-color: red;"></div>
+        <div class="ball" id="ball2" style="background-color: blue;"></div>
+        <div class="ball" id="ball3" style="background-color: green;"></div>
+        <div class="ball" id="ball4" style="background-color: orange;"></div>
+        <div class="ball" id="ball5" style="background-color: black;"></div>
+        <div class="ball" id="ball6" style="background-color: brown;"></div>
+        <div class="ball" id="ball7" style="background-color: lightgreen;"></div>
+        <div class="ball" id="ball8" style="background-color: lightblue;"></div>
+        <div class="ball" id="ball9" style="background-color: pink;"></div>
+        <div class="ball" id="ball10" style="background-color: yellow;"></div>
+      </div>
+
+      <script>
+            const bal1 = document.querySelector("#ball1");
+            const bal2 = document.querySelector("#ball2");
+            const bal3 = document.querySelector("#ball3");
+            const bal4 = document.querySelector("#ball4");
+            const bal5 = document.querySelector("#ball5");
+            const bal6 = document.querySelector("#ball6");
+            const bal7 = document.querySelector("#ball7");
+            const bal8 = document.querySelector("#ball8");
+            const bal9 = document.querySelector("#ball9");
+            const bal10 = document.querySelector("#ball10");
+            let x = 0;
+            let y = 0;
+            let xSpeed = 10;
+            let ySpeed = 10;
+            function animate() {
+            x += xSpeed;
+            y += ySpeed;
+            if (x + 50 > window.innerWidth || x < 0) {
+               xSpeed = -xSpeed;
+            }
+            if (y + 50 > window.innerHeight || y < 0) {
+               ySpeed = -ySpeed;
+            }
+
+                bal1.style.right = x + "px";
+                bal1.style.top = y + "px";
+
+                bal2.style.left = x + "px";
+                bal2.style.top = y + "px";
+
+                bal3.style.top = x + "px";
+                bal3.style.right = y + "px";
+
+                bal4.style.bottom = x + "px";
+                bal4.style.top = y + "px";
+
+                bal5.style.top = x + "px";
+                bal5.style.bottom = y + "px";
+
+                bal6.style.left = x + "px";
+                bal6.style.bottom = y + "px";
+
+                bal7.style.topright = x + "px";
+                bal7.style.left = y + "px";
+
+                bal8.style.bottom = x + "px";
+                bal8.style.right = y + "px";
+
+                bal9.style.top = x + "px";
+                bal9.style.left = y + "px";
+
+                bal10.style.bottom = x + "px";
+                bal10.style.left = y + "px";
+
+                requestAnimationFrame(animate);
+         }
+        animate();
+      </script>
+   </body>
+</html>
